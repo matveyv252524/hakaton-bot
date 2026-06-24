@@ -129,7 +129,7 @@ def get_difficulty_keyboard():
         resize_keyboard=True
     )
 
-# ===================== ИИ =======================================
+# ===================== НАЧАЛО ИИ =======================================
 
 async def query_yandex(prompt: str) -> str:
     headers = {
@@ -197,7 +197,6 @@ def build_prompt(activities: List[str], answers: Dict[str, Any]) -> str:
     )
     return prompt
 
-# ===================== СОХРАНЕНИЕ ДАННЫХ ===========================
 
 def save_record(user_id: int, activities: List[str], answers: Dict[str, Any], recommendations: str):
     record = {
@@ -214,7 +213,7 @@ def save_record(user_id: int, activities: List[str], answers: Dict[str, Any], re
     except Exception as e:
         logging.error(f"Failed to save record: {e}")
 
-# =================================================================
+# =========================== КОНЕЦ ИИ ======================================
 
 @dp.message(Command("start"))
 async def start_command(message: types.Message, state: FSMContext):
